@@ -7,8 +7,8 @@ import {
     UserOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import {IPizza, pizzaMenu} from "./data/Pizza";
+import { Layout, Menu, theme } from 'antd';
+import {IPizzaDetailed, pizzaMenu} from "./data/Pizza";
 import PizzaForm from "./components/PizzaForm";
 import PizzaContent from "./components/PizzaContent";
 
@@ -48,7 +48,7 @@ const App: React.FC = () => {
         token: { colorBgContainer },
     } = theme.useToken();
     const[pizzas, setPizzas] = useState(pizzaMenu)
-    const createNewPizza = (item : IPizza)=>{
+    const createNewPizza = (item : IPizzaDetailed)=>{
         setPizzas((prevState: any) => [...prevState,item])
         console.log(pizzas)
     }
@@ -64,7 +64,7 @@ const App: React.FC = () => {
                 <Content style={{ margin: '0 16px' }}>
                     <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
                         <PizzaContent data={pizzas} />
-                        <PizzaForm createPizza={(item:IPizza)=>createNewPizza(item)}/>
+                        <PizzaForm createPizza={(item:IPizzaDetailed)=>createNewPizza(item)}/>
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>
