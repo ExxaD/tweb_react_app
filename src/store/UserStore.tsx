@@ -33,6 +33,7 @@ class UserStore {
     }
 
     clearSession(): void {
+        this.session = undefined
         localStorage.removeItem("sessionUser")
     }
 }

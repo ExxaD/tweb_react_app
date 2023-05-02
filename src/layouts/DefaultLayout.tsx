@@ -1,8 +1,11 @@
-import {Layout, Menu, theme} from "antd";
+import {Layout, Menu, Button, theme} from "antd";
 import React, {useState} from "react";
 import {
-    DesktopOutlined,
+    LogoutOutlined,
     PieChartOutlined,
+    PlusCircleOutlined,
+    FieldTimeOutlined,
+    ClearOutlined
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import {NavLink} from "react-router-dom";
@@ -26,11 +29,17 @@ function getItem(
     } as MenuItem;
 }
 
+function clearLocalStorage() {
+    localStorage.clear()
+    window.location.reload();
+}
+
 const items: MenuItem[] = [
     getItem((<NavLink to="/">Pizza menu</NavLink>), '1', <PieChartOutlined />),
-    getItem((<NavLink to="/pizza/new">New pizza</NavLink>), '2', <PieChartOutlined />),
-    getItem((<NavLink to="/history">History</NavLink>), '3', <PieChartOutlined />),
-    getItem((<NavLink to="/logout">Logout</NavLink>), '4', <DesktopOutlined />),
+    getItem((<NavLink to="/pizza/new">New pizza</NavLink>), '2', <PlusCircleOutlined />),
+    getItem((<NavLink to="/history">History</NavLink>), '3', <FieldTimeOutlined />),
+    getItem((<Button ghost={true} style={{border: "none"}} onClick={clearLocalStorage}>Clear storage</Button>), '4', <ClearOutlined />),
+    getItem((<NavLink to="/logout">Logout</NavLink>), '5', <LogoutOutlined />),
 ];
 
 const DefaultLayout = ({children}:any) => {

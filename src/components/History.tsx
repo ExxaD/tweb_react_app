@@ -10,6 +10,8 @@ const History = () => (
             <p>
                 With hard work and determination, Tony opened the doors to Pizza Palace in a small storefront on Main Street. At first, it was just Tony and his wife making the pizzas and serving customers. But as word of mouth spread about their delicious pies, the demand grew, and they hired a few more staff members to help.
             </p>
+            <img style={{ display: "block", margin: "auto" }} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm7p1KDVV_miKJ02qhYyUbRO8ZAx9jgS5a6Q&usqp=CAU" />
+
             <p>
                 As the years went on, Pizza Palace continued to expand. We moved to a larger location, added more items to our menu, and hired more employees. Through it all, we have never compromised on our commitment to quality ingredients and excellent customer service.
             </p>
