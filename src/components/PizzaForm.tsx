@@ -15,6 +15,7 @@ export default function PizzaForm({createPizza}: any) {
             price: values.price
         }
         createPizza(newItem)
+        window.alert("Pizza " + newItem.name + " is added to the menu")
         form.resetFields()
     };
 
@@ -28,7 +29,7 @@ export default function PizzaForm({createPizza}: any) {
             onFinish={onSubmit}
             style={{ height: "450px", width: "100%", margin: "1%", display: "inline-block"}}
         >
-            Add new pizza
+            <div style={{ fontSize: "40px", textAlign: "center" }}>Add new pizza</div>
             <br />
             <br />
             <Form.Item label="Name" name="name" rules={[{ required: true, message: 'Please enter name!' }]}>
