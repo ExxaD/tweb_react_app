@@ -11,6 +11,8 @@ import { Layout, Menu, theme } from 'antd';
 import {IPizzaDetailed, pizzaMenu} from "./data/Pizza";
 import PizzaForm from "./components/PizzaForm";
 import PizzaContent from "./components/PizzaContent";
+import LocalStorage from "./storage/LocalStorage";
+import {observer} from "mobx-react";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -42,7 +44,7 @@ const items: MenuItem[] = [
     getItem('Files', '9', <FileOutlined />),
 ];
 
-const App: React.FC = () => {
+const App: React.FC = observer(() => {
     const [collapsed, setCollapsed] = useState(false);
     const {
         token: { colorBgContainer },
@@ -62,9 +64,9 @@ const App: React.FC = () => {
                 <Header style={{ padding: 0, background: colorBgContainer }} />
                 <Content style={{ margin: '0 16px' }}>
                     <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
-                        <PizzaContent data={pizzas} />
+                        <PizzaContent data={LocalStorage.data} />
                         <span style={{ display: "inline-block", borderStyle: "solid", width: "33%", padding: "25px" }}>
-                            <PizzaForm createPizza={(item:IPizzaDetailed)=>createNewPizza(item)} />
+                            <PizzaForm createPizza={(item:IPizzaDetailed)=>LocalStorage.createNewPizza(item)} />
                         </span>
                     </div>
                 </Content>
@@ -72,6 +74,6 @@ const App: React.FC = () => {
             </Layout>
         </Layout>
     );
-};
+})
 
 export default App;
