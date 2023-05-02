@@ -1,7 +1,7 @@
 import {action, makeObservable, observable} from "mobx";
 import {IPizzaDetailed, pizzaMenu} from "../data/Pizza";
 
-class LocalStorage {
+class PizzaStore {
     data: IPizzaDetailed[] = [];
 
     constructor() {
@@ -9,7 +9,6 @@ class LocalStorage {
             data: observable,
             createNewPizza: action,
         });
-        console.log(localStorage.getItem("pizzaMenu"))
         if (!localStorage.getItem("pizzaMenu")) {
             this.data = pizzaMenu;
             localStorage.setItem("pizzaMenu", JSON.stringify([...this.data]))
@@ -24,4 +23,4 @@ class LocalStorage {
     }
 }
 
-export default new LocalStorage();
+export default new PizzaStore();
