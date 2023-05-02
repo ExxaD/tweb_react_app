@@ -2,10 +2,7 @@ import {Layout, Menu, theme} from "antd";
 import React, {useState} from "react";
 import {
     DesktopOutlined,
-    FileOutlined,
     PieChartOutlined,
-    TeamOutlined,
-    UserOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import {NavLink} from "react-router-dom";
@@ -31,8 +28,9 @@ function getItem(
 
 const items: MenuItem[] = [
     getItem((<NavLink to="/">Pizza menu</NavLink>), '1', <PieChartOutlined />),
-    getItem((<NavLink to="/history">History</NavLink>), '2', <PieChartOutlined />),
-    getItem((<NavLink to="/logout">Logout</NavLink>), '3', <DesktopOutlined />),
+    getItem((<NavLink to="/pizza/new">New pizza</NavLink>), '2', <PieChartOutlined />),
+    getItem((<NavLink to="/history">History</NavLink>), '3', <PieChartOutlined />),
+    getItem((<NavLink to="/logout">Logout</NavLink>), '4', <DesktopOutlined />),
 ];
 
 const DefaultLayout = ({children}:any) => {

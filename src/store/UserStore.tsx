@@ -9,11 +9,13 @@ class UserStore {
         makeObservable(this, {
             data: observable
         });
+        // @ts-ignore
         this.data = JSON.parse(localStorage.getItem("users"))
         if (!this.data) {
             this.data = userDatabase;
             localStorage.setItem("users", JSON.stringify([...this.data]))
         }
+        // @ts-ignore
         this.session = JSON.parse(localStorage.getItem("sessionUser"))
     }
 

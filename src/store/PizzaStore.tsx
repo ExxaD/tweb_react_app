@@ -13,6 +13,7 @@ class PizzaStore {
             this.data = pizzaMenu;
             localStorage.setItem("pizzaMenu", JSON.stringify([...this.data]))
         } else {
+            // @ts-ignore
             this.data = JSON.parse(localStorage.getItem("pizzaMenu"))
         }
     }
