@@ -63,7 +63,9 @@ const App: React.FC = () => {
                 <Content style={{ margin: '0 16px' }}>
                     <div style={{ padding: 24, minHeight: 360, background: colorBgContainer }}>
                         <PizzaContent data={pizzas} />
-                        <PizzaForm createPizza={(item:IPizzaDetailed)=>createNewPizza(item)}/>
+                        <span style={{ display: "inline-block", borderStyle: "solid", width: "33%", padding: "25px" }}>
+                            <PizzaForm createPizza={(item:IPizzaDetailed)=>createNewPizza(item)} />
+                        </span>
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>

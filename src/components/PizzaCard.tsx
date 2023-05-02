@@ -7,8 +7,8 @@ export default function PizzaCard(props: IPizzaDetailed) {
     return(
         <Card
             hoverable
-            style={{ width: "30%", display: "inline-block", margin: "1%"}}
-            cover={<img alt="Pizza" src={props.imageUrl} />}
+            style={{ height: "700px", width: "30%", display: "inline-block", margin: "1%"}}
+            cover={<img alt="Pizza" src={props.imageUrl} style={{ height: "400px", objectFit: "cover" }} />}
         >
             <Meta title={props.name} description={props.description} />
             <br />

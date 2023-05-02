@@ -26,7 +26,7 @@ export default function PizzaForm({createPizza}: any) {
                 price: 1.00
             }}
             onFinish={onSubmit}
-            style={{ width: "33%", margin: "1%"}}
+            style={{ height: "450px", width: "100%", margin: "1%", display: "inline-block"}}
         >
             Add new pizza
             <br />
