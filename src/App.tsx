@@ -50,7 +50,6 @@ const App: React.FC = () => {
     const[pizzas, setPizzas] = useState(pizzaMenu)
     const createNewPizza = (item : IPizzaDetailed)=>{
         setPizzas((prevState: any) => [...prevState,item])
-        console.log(pizzas)
     }
 
     return (
